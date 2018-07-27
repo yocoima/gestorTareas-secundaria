@@ -1,0 +1,36 @@
+
+<div class="container mt-5 shadow p-3 mb-5 bg-white rounded" >
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Tarea</th>
+        <th scope="col">Clasificacion</th>
+        <th scope="col">Importancia</th>
+        <th scope="col">Periodo</th>
+        <th scope="col">Notas</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let tarea of tareaList">
+        <td>{{tarea.descripcion}}</td>
+        <td>{{tarea.SeleccionClasificacion}}</td>
+        <td>{{tarea.SeleccionImportancia}}</td>
+        <td>{{tarea.SeleccionPeriodo}}</td>
+        <td>{{tarea.notas}}</td>
+        <td>
+          <i div style="font-size: 1.8rem; color:red" class="fas fa-exclamation-circle"></i>
+        </td>
+        <td>
+          <button type="button" class="btn btn-success btn- btn-sm">Realizado</button>
+          <button type="button" class="btn btn-danger btn- btn-sm" (click)="borrar(tarea.key$)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+</div>

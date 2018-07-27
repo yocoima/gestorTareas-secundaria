@@ -1,0 +1,24 @@
+<div class="container formMantenedor shadow p-3 mb-5 bg-white rounded">
+  <form class="form-inline" #mantenedor="ngForm" (ngSubmit)="guardar(mantenedor)">
+
+        <div class="form-group mx-sm-3 mb-2" *ngFor="let mantenedor of mantenedores">
+          <div class="col-md">
+            <label for="{{mantenedor.label}}" class="col"></label>
+            <input
+            type="text"
+            class="form-control"
+            name="{{mantenedor.name}}"
+            #notas="ngModel"
+            [(ngModel)]=s
+            placeholder="{{mantenedor.placeholder}}"
+            >
+          </div>
+          <div class="col-md">
+            <button type="submit" class="btn btn-primary">Crear</button>
+          </div>
+        </div>
+
+
+
+  </form>
+</div>
