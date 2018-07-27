@@ -44,3 +44,10 @@ h3{
 .btn-right{
 	margin-left: 100%;
 }
+
+body{
+    background: url(./assets/img/candado.jpg);
+
+    -webkit-background-size: cover;
+    background-size: cover;
+}

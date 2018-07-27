@@ -11,6 +11,7 @@ import { environment } from '../environments/environment';
 // SERVICIOS
 import { ConexionbdService } from './servicios/conexionbd.service';
 import { MantenedorService } from './servicios/mantenedor.service';
+import { AuthService } from './servicios/auth.service';
 
 // COMPONENTES
 import { AppComponent } from './app.component';
@@ -24,6 +25,7 @@ import { Urls } from './models/urls';
 // RUTAS
 import { APP_ROUTING } from './app.routes';
 import { MantenedorComponent } from './components/mantenedor/mantenedor.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
@@ -33,7 +35,8 @@ import { MantenedorComponent } from './components/mantenedor/mantenedor.componen
     NavbarComponent,
     NewTareaComponent,
     BitacoraTareasComponent,
-    MantenedorComponent
+    MantenedorComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,7 @@ import { MantenedorComponent } from './components/mantenedor/mantenedor.componen
     FormsModule,
     HttpClientModule
   ],
-  providers: [ConexionbdService,Tareas, Urls, AngularFireDatabase, MantenedorService],
+  providers: [ConexionbdService,Tareas, Urls, AngularFireDatabase, MantenedorService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
