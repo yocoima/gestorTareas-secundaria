@@ -3,7 +3,8 @@
      <div class="">
        <form>
 
-         <button  class="btn btn-primary" (click)="logon()">Iniciar</button>
+         <button *ngIf="!auth.isAuthenticated()" class="btn btn-primary btn-3" (click)="login()">Iniciar</button>
+         <button *ngIf="auth.isAuthenticated()" class="btn btn-primary" (click)="onLogout()">Cerrar</button>
        </form>
      </div>
    </div>

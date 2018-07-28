@@ -5,14 +5,16 @@ import { AuthService } from '../../servicios/auth.service';
   selector: 'app-home',
   templateUrl: './home.component.html'
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
-  constructor( private auth: AuthService) { }
-
-  ngOnInit() {
+  constructor( private auth: AuthService) {
+    auth.handleAuthentication();
   }
 
   login(){
   this.auth.login();
+  }
+  onLogout(){
+    this.auth.logout();
   }
 }
