@@ -12,6 +12,7 @@ import { environment } from '../environments/environment';
 import { ConexionbdService } from './servicios/conexionbd.service';
 import { MantenedorService } from './servicios/mantenedor.service';
 import { AuthService } from './servicios/auth.service';
+import { AuthGuardService } from './servicios/auth-guard.service';
 
 // COMPONENTES
 import { AppComponent } from './app.component';
@@ -45,7 +46,8 @@ import { HomeComponent } from './components/home/home.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [ConexionbdService,Tareas, Urls, AngularFireDatabase, MantenedorService, AuthService],
+  providers: [ConexionbdService,Tareas, Urls, AngularFireDatabase,
+              MantenedorService, AuthService,AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,13 +4,14 @@ import { BitacoraTareasComponent } from './components/bitacora-tareas/bitacora-t
 import { InicioSesionComponent } from './components/inicio-sesion/inicio-sesion.component';
 import { MantenedorComponent } from './components/mantenedor/mantenedor.component';
 import { HomeComponent } from './components/home/home.component';
+import { AuthGuardService } from './servicios/auth-guard.service';
 
 const APP_ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'inicio-sesion', component: InicioSesionComponent },
-  { path: 'new-tarea', component: NewTareaComponent },
-  { path: 'bitacora-tareas', component: BitacoraTareasComponent },
-  { path: 'mantenedor', component: MantenedorComponent },
+  { path: 'new-tarea', component: NewTareaComponent, canActivate:[AuthGuardService] },
+  { path: 'bitacora-tareas', component: BitacoraTareasComponent, canActivate:[AuthGuardService] },
+  { path: 'mantenedor', component: MantenedorComponent, canActivate:[AuthGuardService] },
   { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 

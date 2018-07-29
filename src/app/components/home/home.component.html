@@ -1,4 +1,4 @@
-<div class="login shadow p-3 mb-5 bg-white rounded">
+<!-- <div class="login shadow p-3 mb-5 bg-white rounded">
    <div class="">
      <div class="">
        <form>
@@ -8,4 +8,13 @@
        </form>
      </div>
    </div>
- </div>
+ </div> -->
+
+
+  <div *ngIf="!auth.isAuthenticated()" class="jumbotron login">
+    <h4 class="">Bienvenido a su gestor de tareas</h4>
+    <hr class="my-4">
+    <a  class="btn btn-primary btn-sm btn-" (click)="login()">Iniciar Sesion</a>
+    <a  class="btn btn-secondary btn-sm" (click)="login()" >Registrarse</a>
+
+</div>

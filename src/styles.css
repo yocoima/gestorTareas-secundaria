@@ -44,6 +44,11 @@ h3{
 .btn-right{
 	margin-left: 100%;
 }
+.btn-top-right{
+	position: relative;
+	margin-left: 30%;
+
+}
 
 body{
     background: url(./assets/img/candado.jpg);
