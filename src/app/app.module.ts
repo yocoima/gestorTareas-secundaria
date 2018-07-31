@@ -22,11 +22,12 @@ import { BitacoraTareasComponent } from './components/bitacora-tareas/bitacora-t
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { Tareas } from './models/tareas';
 import { Urls } from './models/urls';
+import { MomentjsComponent } from './components/momentjs/momentjs.component';
+import { HomeComponent } from './components/home/home.component';
 
 // RUTAS
 import { APP_ROUTING } from './app.routes';
 import { MantenedorComponent } from './components/mantenedor/mantenedor.component';
-import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { HomeComponent } from './components/home/home.component';
     NewTareaComponent,
     BitacoraTareasComponent,
     MantenedorComponent,
-    HomeComponent
+    HomeComponent,
+    MomentjsComponent
   ],
   imports: [
     BrowserModule,

@@ -5,6 +5,7 @@ import { Urls } from '../../models/urls';
 import { NgForm } from '@angular/forms';
 import { Clasificacion, Importancia, Periodo } from '../../models/clasificacion';
 
+
 @Component({
   selector: 'app-new-tarea',
   templateUrl: './new-tarea.component.html'
@@ -86,4 +87,6 @@ conexionbdService.getobjects(UrlImportancia).subscribe(
     newTarea.reset();
     this.conexionbdService.selectedTarea = new Tareas();
   }
+
+
 }
