@@ -13,6 +13,7 @@ export class HomeComponent {
 
   login(){
   this.auth.login();
+  console.log(this.auth)
   }
   onLogout(){
     this.auth.logout();
