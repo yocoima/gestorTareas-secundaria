@@ -13,7 +13,7 @@ export class AuthGuardService implements CanActivate {
 
   canActivate(next:ActivatedRouteSnapshot, state:RouterStateSnapshot){
 
-    console.log(next);
+    // console.log(next);
 
     if (this.auth.isAuthenticated() ){
       console.log("se autentico por el guard");
@@ -24,5 +24,3 @@ export class AuthGuardService implements CanActivate {
       return false;
     }
   }
-
-}
