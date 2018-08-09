@@ -1,3 +1,11 @@
+<h1>{{hora | date}}</h1>
+
+<script src="moment.js"></script>
+    <script>
+      moment().format({{hora}});
+      {{hora}}
+    </script>
 <p>
-  momentjs works!{{hora}}
+  {{hora}}
 </p>
+<span id="hora"></span>

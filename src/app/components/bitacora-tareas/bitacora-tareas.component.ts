@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ConexionbdService } from '../../servicios/conexionbd.service';
+import { MomentjsComponent } from '../../components/momentjs/momentjs.component';
 import { AngularFireDatabase, AngularFireList} from 'angularfire2/database';
 import { Tareas } from '../../models/tareas';
+import * as moment from 'moment';
 @Component({
   selector: 'app-bitacora-tareas',
   templateUrl: './bitacora-tareas.component.html'
@@ -12,10 +14,17 @@ export class BitacoraTareasComponent implements OnInit {
   tareas: any []=[];
 
   tareaList: Tareas [];
+  hora: MomentjsComponent;
 
   constructor(private _conexionbdService: ConexionbdService,
-              private _tarea: Tareas
-  ) {}
+              private _tarea: Tareas,
+  ) {
+
+    let hora:string = moment().format('LLLL');
+    console.log(hora);
+
+
+  }
 //   {
 //     let url:string = "https://appangular-1e41c.firebaseio.com/tareas.json";
 //     this._conexionbdService.getobjects(url).subscribe(
@@ -51,13 +60,11 @@ ngOnInit() {
   });
 }
 
+
+
 borrar(key$:string){
     this._conexionbdService.deleteTarea(key$);
 
 }
-
-
-
-
 
 }

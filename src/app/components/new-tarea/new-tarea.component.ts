@@ -4,6 +4,7 @@ import { Tareas } from '../../models/tareas';
 import { Urls } from '../../models/urls';
 import { NgForm } from '@angular/forms';
 import { Clasificacion, Importancia, Periodo } from '../../models/clasificacion';
+import * as moment from 'moment';
 
 
 @Component({
@@ -24,6 +25,7 @@ imprimirVarlor(){
  SeleccionClasificacion: string;
  SeleccionImportancia: string;
  SeleccionPerido: string;
+ date = moment();
 
   constructor(private conexionbdService: ConexionbdService) {
 
@@ -87,6 +89,5 @@ conexionbdService.getobjects(UrlImportancia).subscribe(
     newTarea.reset();
     this.conexionbdService.selectedTarea = new Tareas();
   }
-
 
 }

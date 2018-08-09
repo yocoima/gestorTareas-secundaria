@@ -9,8 +9,12 @@ export class MomentjsComponent implements OnInit {
 
   constructor() {
 
-      let hora = moment().format('LLLL');
+
+
+      let hora:string = moment().format('LLLL');
       console.log(hora);
+
+
   }
 
 

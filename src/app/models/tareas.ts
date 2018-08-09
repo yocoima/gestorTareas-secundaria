@@ -5,4 +5,5 @@ export class Tareas {
   SeleccionImportancia:string;
   SeleccionPeriodo: string;
   notas: string;
+  fecha: string;
 }

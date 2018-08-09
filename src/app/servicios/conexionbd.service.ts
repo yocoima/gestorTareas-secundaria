@@ -33,7 +33,8 @@ export class ConexionbdService {
         SeleccionClasificacion: tareas.SeleccionClasificacion,
         SeleccionImportancia: tareas.SeleccionImportancia,
         SeleccionPeriodo:tareas.SeleccionPeriodo,
-        notas: tareas.notas
+        notas: tareas.notas,
+        fecha: tareas.fecha
       });
     }
     updateTarea(tareas: Tareas){

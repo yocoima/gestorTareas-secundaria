@@ -1,6 +1,11 @@
 
 <div class="container mt-5 shadow p-3 mb-5 bg-white rounded" >
 
+
+  <div class="alert alert-primary" role="alert">
+    DameLaFechaHora(){{hora}}
+  </div>
+
   <table class="table">
     <thead class="thead-dark">
       <tr>
@@ -9,6 +14,7 @@
         <th scope="col">Importancia</th>
         <th scope="col">Periodo</th>
         <th scope="col">Notas</th>
+        <th scope="col">Fecha</th>
         <th scope="col"></th>
         <th scope="col"></th>
         <th scope="col"></th>
@@ -21,6 +27,7 @@
         <td>{{tarea.SeleccionImportancia}}</td>
         <td>{{tarea.SeleccionPeriodo}}</td>
         <td>{{tarea.notas}}</td>
+        <td>{{tarea.fecha}}</td>
         <td>
           <i div style="font-size: 1.8rem; color:red" class="fas fa-exclamation-circle"></i>
         </td>
