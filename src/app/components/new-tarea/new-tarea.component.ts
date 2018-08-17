@@ -3,6 +3,7 @@ import { ConexionbdService } from '../../servicios/conexionbd.service';
 import { Tareas } from '../../models/tareas';
 import { Urls } from '../../models/urls';
 import { NgForm } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { Clasificacion, Importancia, Periodo } from '../../models/clasificacion';
 import * as moment from 'moment';
 
@@ -27,7 +28,12 @@ imprimirVarlor(){
  SeleccionPerido: string;
  date = moment();
 
-  constructor(private conexionbdService: ConexionbdService) {
+  constructor(private conexionbdService: ConexionbdService,
+              private toastr: ToastrService ) {
+
+  let hora:string = moment().format('L');
+  console.log(hora);
+  document.write(hora);
 
   let urlClasificacion:string =
   "https://appangular-1e41c.firebaseio.com/clasifiacion.json";
@@ -77,11 +83,14 @@ conexionbdService.getobjects(UrlImportancia).subscribe(
     console.log(newTarea.value);
     this.conexionbdService.insertTarea(newTarea.value);
     this.resetForm(newTarea);
+    this.toastr.success('Nueva Tarea Creada');
 
   }
   borrar(newTarea: NgForm){
-    this.conexionbdService.deleteTarea(newTarea.value);
-
+    if (confirm("Esta seguro que desea borrar la tarea?")){
+      this.conexionbdService.deleteTarea(newTarea.value);
+      this.toastr.success('Tarea Eliminada');
+    }
   }
 
   resetForm(newTarea?: NgForm){

@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 // para BD Firebase
 import { AngularFireModule } from 'angularfire2';
@@ -46,7 +48,9 @@ import { MantenedorComponent } from './components/mantenedor/mantenedor.componen
     APP_ROUTING,
     AngularFireModule.initializeApp(environment.firebase),
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [ConexionbdService,Tareas, Urls, AngularFireDatabase,
               MantenedorService, AuthService,AuthGuardService],

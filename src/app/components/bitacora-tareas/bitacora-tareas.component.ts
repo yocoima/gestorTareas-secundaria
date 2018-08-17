@@ -4,6 +4,7 @@ import { MomentjsComponent } from '../../components/momentjs/momentjs.component'
 import { AngularFireDatabase, AngularFireList} from 'angularfire2/database';
 import { Tareas } from '../../models/tareas';
 import * as moment from 'moment';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-bitacora-tareas',
   templateUrl: './bitacora-tareas.component.html'
@@ -18,6 +19,7 @@ export class BitacoraTareasComponent implements OnInit {
 
   constructor(private _conexionbdService: ConexionbdService,
               private _tarea: Tareas,
+              private toastr: ToastrService
   ) {
 
     let hora:string = moment().format('LLLL');
@@ -63,8 +65,11 @@ ngOnInit() {
 
 
 borrar(key$:string){
+  if (confirm("Esta seguro que desea borrar la tarea?")){
     this._conexionbdService.deleteTarea(key$);
+    this.toastr.success('Tarea Eliminada');
 
 }
 
+}
 }
