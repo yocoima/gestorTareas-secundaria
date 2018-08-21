@@ -13,13 +13,16 @@ import * as moment from 'moment';
   templateUrl: './new-tarea.component.html'
 })
 
+
 export class NewTareaComponent implements OnInit {
+
 
 imprimirVarlor(){
 
 }
 
 // Para llenar los combos
+ hora:string = moment().format('L');
  ComboClasificacion: string []=[];
  ComboImportancia: string []=[];
  ComboPeriodo: string[]= [];
@@ -31,10 +34,7 @@ imprimirVarlor(){
   constructor(private conexionbdService: ConexionbdService,
               private toastr: ToastrService ) {
 
-  let hora:string = moment().format('L');
-  console.log(hora);
-  document.write(hora);
-
+  console.log(this.hora);
   let urlClasificacion:string =
   "https://appangular-1e41c.firebaseio.com/clasifiacion.json";
   let UrlImportancia:string =
