@@ -15,6 +15,7 @@ import * as moment from 'moment';
 
 export class NewTareaComponent implements OnInit {
 hora:string;
+fech:string;
 imprimirVarlor(){
 
 }
@@ -31,8 +32,10 @@ imprimirVarlor(){
   constructor(private conexionbdService: ConexionbdService,
               private toastr: ToastrService ) {
 
-  this.hora  = moment().format('L');
+  this.fech  = moment().format('L');
+  this.hora = moment().format('LT');
   console.log(this.hora);
+  console.log(this.fech);
 
   let urlClasificacion:string =
   "https://appangular-1e41c.firebaseio.com/clasifiacion.json";
@@ -79,7 +82,7 @@ conexionbdService.getobjects(UrlImportancia).subscribe(
   }
 
   guardar(newTarea: NgForm){
-    newTarea.value['fecha']= this.hora;
+    newTarea.value['fecha']= this.fech;
     console.log(newTarea.value);
     this.conexionbdService.insertTarea(newTarea.value);
     this.resetForm(newTarea);

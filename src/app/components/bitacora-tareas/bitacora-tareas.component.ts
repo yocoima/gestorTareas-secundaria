@@ -11,22 +11,18 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class BitacoraTareasComponent implements OnInit {
 
-  // item: string []=[];
+  hora:string;
+  fech:string;
   tareas: any []=[];
-
   tareaList: Tareas [];
-  hora: MomentjsComponent;
 
   constructor(private _conexionbdService: ConexionbdService,
               private _tarea: Tareas,
               private toastr: ToastrService
   ) {
-
-    let hora:string = moment().format('LLLL');
-    console.log(hora);
-
-
-  }
+    this.fech  = moment().format('L');
+    this.hora = moment().format('LT');
+}
 //   {
 //     let url:string = "https://appangular-1e41c.firebaseio.com/tareas.json";
 //     this._conexionbdService.getobjects(url).subscribe(
@@ -62,14 +58,15 @@ ngOnInit() {
   });
 }
 
-
-
 borrar(key$:string){
   if (confirm("Esta seguro que desea borrar la tarea?")){
     this._conexionbdService.deleteTarea(key$);
     this.toastr.success('Tarea Eliminada');
+    }
+  }
 
-}
+  realizado(key$:string){
+    
+  }
 
-}
 }
